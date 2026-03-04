@@ -21,10 +21,10 @@ for(let x=0;x<columns;x++) drops[x]=1;
 
 function draw(){
 
-ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillStyle = "rgba(0,0,0,0.2)";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
-ctx.fillStyle="#00ff9c";
+ctx.fillStyle="#00bfff";
 ctx.font=fontSize+"px monospace";
 
 for(let i=0;i<drops.length;i++){
