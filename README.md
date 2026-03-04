@@ -1,2 +1,3 @@
 # vathan-bandari-portfolio
-Personal cybersecurity portfolio website showcasing penetration testing projects, security labs, certifications, and technical skills.
+This repository contains the source code for my personal cybersecurity portfolio website.  
+It highlights my penetration testing projects, security research, certifications, and technical skills.
