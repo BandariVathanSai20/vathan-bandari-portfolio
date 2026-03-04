@@ -1,4 +1,6 @@
-// MATRIX BACKGROUND
+window.onload = function () {
+
+/* MATRIX BACKGROUND */
 
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
@@ -12,25 +14,25 @@ const columns = canvas.width / fontSize;
 
 const drops = [];
 
-for(let x = 0; x < columns; x++)
+for (let x = 0; x < columns; x++)
 drops[x] = 1;
 
-function draw(){
+function draw() {
 
 ctx.fillStyle = "rgba(0,0,0,0.05)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-ctx.fillStyle="#00ff9c";
-ctx.font=fontSize+"px monospace";
+ctx.fillStyle = "#00ff9c";
+ctx.font = fontSize + "px monospace";
 
-for(let i=0;i<drops.length;i++){
+for (let i = 0; i < drops.length; i++) {
 
-const text = letters.charAt(Math.floor(Math.random()*letters.length));
+const text = letters.charAt(Math.floor(Math.random() * letters.length));
 
-ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
-drops[i]=0;
+if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+drops[i] = 0;
 
 drops[i]++;
 
@@ -38,10 +40,10 @@ drops[i]++;
 
 }
 
-setInterval(draw,33);
+setInterval(draw, 33);
 
 
-// TERMINAL INTRO
+/* TERMINAL INTRO */
 
 const messages = [
 "> initializing system...",
@@ -50,45 +52,45 @@ const messages = [
 "> access granted"
 ];
 
-let line=0;
-let char=0;
+let line = 0;
+let char = 0;
 
-const terminal=document.getElementById("terminal-text");
+const terminal = document.getElementById("terminal-text");
 
-function type(){
+function type() {
 
-if(line < messages.length){
+if (line < messages.length) {
 
-if(char < messages[line].length){
+if (char < messages[line].length) {
 
 terminal.innerHTML += messages[line].charAt(char);
 
 char++;
 
-setTimeout(type,40);
+setTimeout(type, 40);
 
-}else{
+} else {
 
 terminal.innerHTML += "<br>";
 
 line++;
 
-char=0;
+char = 0;
 
-setTimeout(type,500);
+setTimeout(type, 500);
 
 }
 
-}else{
+} else {
 
-setTimeout(()=>{
+setTimeout(() => {
 
-document.getElementById("terminal-intro").style.display="none";
-document.getElementById("main-content").style.display="block";
+document.getElementById("terminal-intro").style.display = "none";
+document.getElementById("main-content").style.display = "block";
 
 startTyping();
 
-},800);
+}, 800);
 
 }
 
@@ -97,28 +99,30 @@ startTyping();
 type();
 
 
-// HEADER TYPING
+/* HEADER TYPING */
 
-function startTyping(){
+function startTyping() {
 
-const text="Bandari Vathan Sai | Cybersecurity Portfolio";
+const text = "Bandari Vathan Sai | Cybersecurity Portfolio";
 
-let i=0;
+let i = 0;
 
-function typing(){
+function typing() {
 
-if(i < text.length){
+if (i < text.length) {
 
 document.querySelector(".typing").innerHTML += text.charAt(i);
 
 i++;
 
-setTimeout(typing,100);
+setTimeout(typing, 100);
 
 }
 
 }
 
 typing();
+
+}
 
 }
