@@ -117,7 +117,7 @@ font-size:20px;
 }
 
 #main-content{
-display:none;
+display:block;
 }
 
 @media(max-width:768px){
